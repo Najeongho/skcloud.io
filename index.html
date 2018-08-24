@@ -9,8 +9,8 @@
   <link rel="shortcut icon" href="images/favicon.ico">    
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-  <link href="css/common.css" rel="stylesheet" >
   <link href="css/animate.css" rel="stylesheet" >  
+  <link href="css/common.css" rel="stylesheet" >
 </head>  
 
 	<body>
@@ -29,7 +29,7 @@
 
       <!-- visual -->
       <div class="visual">
-        <div class="inner">
+        <div class="overlay">
           <h1 class="fadeInUp show animated bounce">Cloud Native</h1>					
           <p class="slideInUp animated wobble">
             OpenSource 기반기술을 보유한 딜리버리, 미래를 위한 dependency 없는 <br>
@@ -39,8 +39,45 @@
       </div>
       <!-- /visual -->
 
-      <!-- main-container -->
+      <!-- Cloud Z SP (Service Platform) -->
       <section class="fadeInUp animated">
+        <div class="container">
+          <div class="row">  
+            <div class="col-md-12">
+                <h2 class="title text-center">
+                  Cloud Z SP (Service Platform)                  
+                  <p>Building a CLOUD For Everything</p>
+                </h2>
+                <p class="description">
+                  Public, Private IaaS 구성 및 Enterprise 수준의 Kubernetes Private Cluster를 제공하고,
+                  Container기반 MSA 코칭프로그램 운영, 다양한 오픈소스 카탈로그 및 add-on 서비스를 통한
+                  비즈니스에만 집중할수 있게 해주는 오픈소스(kubernetes)기반 Fully Managed Cloud Platform 서비스
+                </p>
+                <div class="col-md-12">
+                  <div class="zcp">
+                    <img src="images/zcp.png" alt="img-02" usemap="#image-maps" id="image-origin" alt="">
+                    <div class="map-area">             
+                        <img src="images/zcp.png" alt="img-02" usemap="#image-maps" id="image-map-origin" alt="">       
+                        <map name="image-maps" id="image-maps">
+                          <area  alt="Z Mon(Monitoring)" title="Z Mon(Monitoring)" href="#" mouset shape="rect" coords="249,183,349,299" style="outline:none;" target="_blank"/>
+                          <area  alt="Z Log(Logging)" title="Z Log(Logging)" href="#" shape="rect" coords="361,183,462,299" style="outline:none;" target="_blank"/>
+                          <area  alt="Z DB" title="Z DB" href="#" shape="rect" coords="627,204,760,289" style="outline:none;" target="_blank"/>
+                          <area  alt="Z Action" title="Z Action" href="#" shape="rect" coords="769,204,902,289" style="outline:none;" target="_blank"/>
+                          <area  alt="Digital Labs" title="Digital Labs" href="#" shape="rect" coords="955,170,1086,503" style="outline:none;" target="_blank"/>
+                          <area  alt="Platform Layer" title="Platform Layer" href="#" shape="rect" coords="249,462,578,515" style="outline:none;" target="_blank"/>
+                          <area  alt="Infrastructure Layer" title="Infrastructure Layer" href="#" shape="rect" coords="249,554,578,607" style="outline:none;" target="_blank"/>
+                        </map>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- SK Cloud Platform -->
+      <section class="fadeInUp animated bg-light-gray">
         <div class="container">
           <div class="row">  
             <div class="col-md-12">
@@ -58,11 +95,11 @@
           </div>
         </div>
       </section>
-      
-      <section class="bg-light-gray">
+
+      <!-- SK Cloud.io Projects -->      
+      <!-- <section>
         <div class="container fadeInUp animated">
           <div class="row">
-            <!-- SK Cloud.io Projects -->
             <div class="col-md-12">
               <div class="row">
                 <h2 class="title text-center"><span>SK</span> Cloud.io Projects</h2>
@@ -217,10 +254,9 @@
                 
               </div>              
             </div>
-            <!-- /SK Cloud.io Projects -->
           </div>
         </div>
-      </section>   
+      </section>    -->
       <!--/ main-container -->
 
       <!-- footer -->
@@ -228,6 +264,90 @@
         COPYRIGHTⓒ2018 BY <span>SK HOLDINGS</span> CO., LTD. ALL RIGHT RESERVED
       </div>
       <!-- /footer -->
+
+      <!-- back-to-top -->
+      <a class="cd-top js-cd-top">
+          back-top-top
+      </a>
+      <script> 
+          // back-to-top
+          (function(){
+              // Back to Top - by CodyHouse.co
+              var backTop = document.getElementsByClassName('js-cd-top')[0],
+                  // browser window scroll (in pixels) after which the "back to top" link is shown
+                  offset = 300,
+                  //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+                  offsetOpacity = 1200,
+                  scrollDuration = 700
+                  scrolling = false;
+              if( backTop ) {
+                  //update back to top visibility on scrolling
+                  window.addEventListener("scroll", function(event) {
+                      if( !scrolling ) {
+                          scrolling = true;
+                          (!window.requestAnimationFrame) ? setTimeout(checkBackToTop, 250) : window.requestAnimationFrame(checkBackToTop);
+                      }
+                  });
+                  //smooth scroll to top
+                  backTop.addEventListener('click', function(event) {
+                      event.preventDefault();
+                      (!window.requestAnimationFrame) ? window.scrollTo(0, 0) : scrollTop(scrollDuration);
+                  });
+              }
+
+              function checkBackToTop() {
+                  var windowTop = window.scrollY || document.documentElement.scrollTop;
+                  ( windowTop > offset ) ? addClass(backTop, 'cd-top--show') : removeClass(backTop, 'cd-top--show', 'cd-top--fade-out');
+                  ( windowTop > offsetOpacity ) && addClass(backTop, 'cd-top--fade-out');
+                  scrolling = false;
+              }
+              
+              function scrollTop(duration) {
+                  var start = window.scrollY || document.documentElement.scrollTop,
+                      currentTime = null;
+                      
+                  var animateScroll = function(timestamp){
+                      if (!currentTime) currentTime = timestamp;        
+                      var progress = timestamp - currentTime;
+                      var val = Math.max(Math.easeInOutQuad(progress, start, -start, duration), 0);
+                      window.scrollTo(0, val);
+                      if(progress < duration) {
+                          window.requestAnimationFrame(animateScroll);
+                      }
+                  };
+
+                  window.requestAnimationFrame(animateScroll);
+              }
+
+              Math.easeInOutQuad = function (t, b, c, d) {
+                  t /= d/2;
+                  if (t < 1) return c/2*t*t + b;
+                  t--;
+                  return -c/2 * (t*(t-2) - 1) + b;
+              };
+
+              //class manipulations - needed if classList is not supported
+              function hasClass(el, className) {
+                  if (el.classList) return el.classList.contains(className);
+                  else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+              }
+              function addClass(el, className) {
+                  var classList = className.split(' ');
+                  if (el.classList) el.classList.add(classList[0]);
+                  else if (!hasClass(el, classList[0])) el.className += " " + classList[0];
+                  if (classList.length > 1) addClass(el, classList.slice(1).join(' '));
+              }
+              function removeClass(el, className) {
+                  var classList = className.split(' ');
+                  if (el.classList) el.classList.remove(classList[0]);	
+                  else if(hasClass(el, classList[0])) {
+                      var reg = new RegExp('(\\s|^)' + classList[0] + '(\\s|$)');
+                      el.className=el.className.replace(reg, ' ');
+                  }
+                  if (classList.length > 1) removeClass(el, classList.slice(1).join(' '));
+              }
+          })();   
+      </script>
 			
 		</div>
 		<!-- /wrapper -->
@@ -235,6 +355,11 @@
 		<!-- Jquery start -->
 		<script type="text/javascript" src="plugins/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="plugins/jquery.maphilight.min.js"></script>
+    <script type="text/javascript">$(function() {
+        $('#image-map-origin').maphilight();
+      });
+    </script>
     
 	</body>
 </html>
